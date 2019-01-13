@@ -11,12 +11,11 @@ namespace AssetBundles
 
         public static string GetPlatformName()
         {
-            Debug.Log(GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget));
-// #if UNITY_EDITOR
+#if UNITY_EDITOR
             return GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget);
-// #else
-//             return GetPlatformForAssetBundles(Application.platform);
-// #endif
+#else
+            return GetPlatformForAssetBundles(Application.platform);
+#endif
         }
 
 #if UNITY_EDITOR
